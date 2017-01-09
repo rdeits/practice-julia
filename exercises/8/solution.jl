@@ -3,7 +3,7 @@ function validate(input, choices)
     if input in choices
         input
     else
-        error("Please enter one of 'rock', 'paper', or 'scissors'")
+        error("Please enter one of $choices")
     end
 end
 
@@ -41,7 +41,7 @@ while true
         println("It's a tie!")
     end
     print("Would you like to play again? [y or n] ")
-    choice = readline(STDIN)
+    choice = validate(readline(STDIN), ["y", "n"])
     if choice[1] == 'n'
         break
     end
